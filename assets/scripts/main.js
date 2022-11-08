@@ -102,10 +102,11 @@ function initFormHandler() {
 
   }
   // B10. TODO - Get a reference to the "Clear Local Storage" button
-    const tapRed = document.querySelector('danger');
+    const tapRed = document.querySelector('.danger');
+    console.log(tapRed);
   // B11. TODO - Add a click event listener to clear local storage button
     tapRed.addEventListener('click', () => {
-      clear();
+      window.localStorage.clear();
       let mainEl = document.querySelector('main');
       mainEl.innerHTML = "";
     });
