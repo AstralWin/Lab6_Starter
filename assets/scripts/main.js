@@ -88,11 +88,9 @@ function initFormHandler() {
     event.preventDefault();
     let formData = new FormData(formEl);
     let recipeObj = {};
-    //Object.assign()
-    /*for (var [key, value] of formData.entries()) { 
-      recipeObj.push(key);
-      recipeObj.push(value);
-    }*/
+    for (var [key, value] of formData.entries()) { 
+      recipeObj[key] = value;
+    }
     let recipeEl = document.createElement('recipe-card');
     recipeEl.data = recipeObj;
     let mainEl = document.querySelector('main');
@@ -101,7 +99,6 @@ function initFormHandler() {
     let uprecipe = getRecipesFromStorage();
     uprecipe.push(recipeObj);
     saveRecipesToStorage(uprecipe);
-    console.log(JSON.stringify(recipeObj));
 
   }
   // B10. TODO - Get a reference to the "Clear Local Storage" button
